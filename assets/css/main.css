@@ -1,0 +1,244 @@
+html, body {
+   height: 100%;
+   width: 100%;
+   margin: 0;
+   font-size: 1rem;
+   background-color: #ffffff;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+ol {
+   padding-left: 1em;
+}
+
+ol li {
+   padding-left: 0.5em;
+   margin-bottom: 0.5em;
+}
+
+ol li::marker {
+   font-weight: 600;
+}
+
+main {
+   display: flex;
+   margin: 1rem;
+   max-width: 80rem;
+   flex-direction: column;
+   justify-content: flex-start;
+   align-items: flex-start;
+}
+
+header {
+   font-size: 1.5rem;
+}
+
+header .title {
+   font-size: 3em;
+   line-height: 1em;
+   margin: 0 0 1rem 0;
+}
+
+header .subtitle {
+   font-size: .75em;
+   font-weight: 600;
+   margin: 0 0 1.5rem 0;
+}
+
+.info-section {
+   max-width: 45rem;
+}
+
+.info-hl {
+   max-width: 45rem;
+   width: 100%;
+   margin: 1rem 0;
+}
+
+.file-options {
+   width: 100%;
+   max-width: 45rem;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   margin: 1rem 0;
+}
+
+.file-options .color-group-input {
+   font-size: 1rem;
+   font-family: inherit;
+   width: 100%;
+   height: 3em;
+   box-sizing: border-box;
+   margin: 0.5rem auto 1rem auto;
+   padding-left: 1em;
+   border: 1px solid #d4d4d4;
+   border-radius: 0;
+}
+
+.file-options .color-group-button {
+   font-size: 0.9rem;
+   font-family: inherit;
+   font-weight: 600;
+   color: #ffffff;
+   box-sizing: border-box;
+   border: 1px solid #005da6;
+   background-color: #005da6;
+   padding: .75em 2em;
+}
+
+.file-options .color-group-button:hover {
+   border-color: rgba(0,0,0,.4);
+   box-shadow: 0 4px 8px 0 rgba(0,0,0,.2);
+}
+
+.file-options .color-group-filename {
+   font-size: 0.9rem;
+   font-weight: 300;
+   font-style: italic;
+   color: #7e7e7e;
+   display: inline-block;
+   margin-left: 1rem;
+}
+
+.picker-section {
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   align-items: stretch;
+   align-content: stretch;
+   gap: 1rem;
+   background-color: #f9f9f9;
+   padding: 1rem;
+   margin: 1rem 0;
+   max-width: 45rem;
+}
+
+.picker-module {
+   display: grid;
+   grid-template-columns: 2rem auto;
+   grid-template-rows: auto auto;
+   grid-template-areas:
+      "identifier identifier"
+      "picker swatch-text";
+   row-gap: 0.5em;
+   width: 35%;
+   padding: 1rem;
+   background-color: #ffffff;
+   flex-grow: 1;
+}
+
+.picker-module-identifier {
+   grid-area: identifier;
+}
+
+.field-title {
+   font-size: 1em;
+   font-weight: 600;
+}
+
+.verte {
+   grid-area: picker;
+   justify-content: flex-start !important;
+}
+
+button.verte__guide {
+   border: 1px solid #d4d4d4;
+   border-radius: 1rem;
+}
+
+button.verte__guide:hover {
+   cursor: pointer;
+}
+
+.swatch-text {
+   grid-area: swatch-text;
+}
+
+.style-preview {
+   margin: 0 auto;
+}
+
+.excel-style-preview {
+   font-size: .8rem;
+   font-family: Calibri, 'Segoe UI', Arial, sans-serif;
+   background-color: #ffffff;
+   outline: 1px solid #d4d4d4;
+   outline-offset: -.25px;
+   border-spacing: 0;
+   box-shadow: 0 0 16px rgba(0, 0, 0, 0.15);
+   margin: 2rem auto;
+}
+
+.excel-cell {
+   height: 1.1em;
+   width: 6em;
+   font-size: 0.9em;
+   outline: 1px solid #d4d4d4;
+   outline-offset: -.5px;
+   padding: .2em .3em;
+}
+
+.excel-style-preview .excel-row.sheet-header, .excel-style-preview .sheet-number {
+   background: #FBFBFB;
+   color: #5E5E5E;
+   font-family: Calibri, 'Segoe UI', Arial, sans-serif;
+   font-weight: 400;
+}
+
+.excel-style-preview .sheet-header .text, .excel-style-preview .sheet-number {
+   font-family: inherit;
+   font-weight: inherit;
+   outline-color: #BCBBBA;
+}
+
+.excel-style-preview .excel-cell.sheet-number, .excel-style-preview .excel-cell.sheet-corner {
+   width: 1.4em;
+   text-align: center;
+}
+
+.excel-style-preview .column-header .excel-cell.text {
+   height: 1.4em;
+   font-size: 1.1em;
+   font-weight: 600;
+   padding: .4em .1em .1em .2em;
+}
+
+.excel-style-preview .HL .excel-cell.text {
+   text-decoration: underline;
+}
+
+@media screen and (min-width: 786px) {
+
+   main {
+      margin: 1rem auto;
+   }
+
+   .info-section, .info-hl {
+      width: 40%;
+      margin-left: 1rem;
+   }
+
+   .file-options {
+      width: 40%;
+      margin: 2rem 1rem;
+   }
+
+   .style-preview {
+      position: fixed;
+      width: 60%;
+      top: 0;
+      right: 0;
+      margin: 15vh auto auto 5rem;
+   }
+
+   .picker-section {
+      width: 40%;
+   }
+
+}
+
+@media screen and (min-width: 1024px) {
+   .excel-style-preview {
+      font-size: 1rem;
+   }
+}
